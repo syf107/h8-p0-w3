@@ -10,6 +10,7 @@ function pasanganTerbesar(num) {
         }        
 
     }
+
     var urutan = angkaTerbesar.sort(function(value1, value2){ return value2 - value1});
     return angkaTerbesar[0];
 }

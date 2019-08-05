@@ -3,8 +3,8 @@ function perkalianUnik(arr) {
     for( var i = 0; i < arr.length; i++){
         hasil = hasil * arr[i];
     }
-    for (i = 0; i < arr.length; i++){
-        arr[i] = hasil / arr[i];
+    for (j = 0; j < arr.length; j++){
+        arr[j] = hasil / arr[j];
     } return arr;
 
 }
