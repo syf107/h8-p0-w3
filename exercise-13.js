@@ -1,21 +1,26 @@
 function targetTerdekat(arr) {
-    var spasiO = 0;
-    var j = 0;
-    
+    var arrX = [];
+    var arrO = [];
+    var hasil = 0;
 
-    for (var i = 0; i < arr.length; i++){
-        if (arr[i] == ' ' && arr[i-j] == 'o') {
-            spasiO = spasiO + 1;
-            j++;
-        } else if (arr[i] == ' ') {
-            spasiO+= 1;
-        } else if (arr[i] == 'x'){
-            break;
+    for( var m = 0; m < arr.length; m++){
+        if (arr[m] === 'o'){
+            arrO.push(m);
+        } else if ( arr[m] === 'x'){
+            arrX.push(m);
         }
-
     }
-    return spasiO;
+    
+    if (arrX[0] > arrO[0]) {
+        hasil = arrX[0] - arrO[0];
+    } else if (arrX[0] < arrO[0]){
+        hasil = arrO[0] - arrX[arrX.length-1];
+    } else {
+        hasil = 0;
+    }
+    return hasil;
 }
+    
   
   // TEST CASES
   console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
